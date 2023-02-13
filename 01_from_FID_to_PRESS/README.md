@@ -1,7 +1,6 @@
-![Pulseq live demo at MRI Together banner](mri_together_esmrmb_banner.png)
 # Pulseq tutorial "From FID to GRE"
 
-Welcome to the "From FID to GRE" tutorial repository! This was initially developed for the Pulseq software demonstration and hands-on session at the **Italian Chapter of ISMRM 2022** in Pisa.
+Welcome to the "From FID to PRESS" tutorial repository! This was initially developed for the Pulseq software demonstration and hands-on session at the **Italian Chapter of ISMRM 2022** in Pisa.
 
 The tutorial starts with the very basic first steps from an FID and non-slective spin-echo sequence and moves on towards spectroscopic PRESS sequence and a set of imaging examples. The imaging part of the tutorial is based around the GRE sequence, where various degrees of sophistication are introduces step-by-step.
 
@@ -20,12 +19,11 @@ Check out the main *Pulseq* repository at https://github.com/pulseq/pulseq and f
 
 [Handout materials](Handout.pdf) TODO.
 
-Source code of the demo sequences and reconstruction scripts is the core of this repository. Please download the files to your computer and make them available to Matlab (e.g. by saving them in a subdirectory inside your Pulseq-Matlab installation and adding them to the Matlab's path). There are two sub-directories:
+The source code of the demo sequences and reconstruction scripts is the core of this repository. Please download the files to your computer and make them available to Matlab (e.g. by saving them in a subdirectory inside your Pulseq-Matlab installation and adding them to the Matlab's path). There are two sub-directories:
 
 * seq : contains example pulse sequences specifically prepared for this demo
 * recon : contains the reconstruction scripts tested with the above sequences
-
-The raw MR data, sequences in Pulseq format and examples of the reconstructed images can be accessed via the anonymous Dropbox link https://www.dropbox.com/sh/l04pm0547yygswk/AAAP4mGeT5Ri0rk8uroGmyita?dl=0 
+* data : contains raw MR data in the Siemens TWIX format and the corresponding pulse sequences in the Pulseq format
 
 ## How to follow 
 
