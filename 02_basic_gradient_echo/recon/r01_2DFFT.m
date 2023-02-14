@@ -5,8 +5,8 @@
 % needs mapVBVD in the path
 
 %% Load data sorted by name
-path='/data/Dropbox/Pulseq_ismrm.it/dataSiemens'; % directory to be scanned for data files
-nF=13; % the number of the data set to load
+path='../data'; % directory to be scanned for data files
+nF=1; % the number of the file / data set to load
 
 pattern='*.dat';
 D=dir([path filesep pattern]);

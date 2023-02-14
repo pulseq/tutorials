@@ -2,7 +2,7 @@
 
 Welcome to the "Basic GRE" tutorial repository! This was initially developed for the Pulseq software demonstration and hands-on session at the **Italian Chapter of ISMRM 2022** in Pisa.
 
-The tutorial starts with the very basic first steps from an FID and non-slective spin-echo sequence and moves on towards spectroscopic PRESS sequence and a set of imaging examples. The imaging part of the tutorial is based around the GRE sequence, where various degrees of sophistication are introduces step-by-step.
+The tutorial starts with a very basic gradient-echo sequence (GRE), with various degrees of sophistication are introduces step-by-step in the following sequences.
 
 ## Quick links
 

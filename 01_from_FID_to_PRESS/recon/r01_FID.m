@@ -2,9 +2,9 @@
 %
 % needs mapVBVD in the path
 
-%% Load data sorted by name
-path='/data/Dropbox/Pulseq_ismrm.it/dataSiemens'; % directory to be scanned for data files
-nF=8; % the number of the data set to load
+%% Load data from the given directory sorted by name
+path='../data'; % directory to be scanned for data files
+nF=1; % the number of the file / data set to load
 
 pattern='*.dat';
 D=dir([path filesep pattern]);
@@ -38,7 +38,11 @@ rawdata = permute(data_unsorted, [1,3,2]);
 seq_file_path = [data_file_path(1:end-3) 'seq'];
 fprintf(['loading `' seq_file_path '´ ...\n']);
 seq = mr.Sequence();              % Create a new sequence object
-seq.read(seq_file_path,'detectRFuse'); % 'detectRFuse' will not fork for multi-FA FID sequence because alpha excitations with the flip-angle larger than 90 degrees will be detected as refocusing pulses
+if nF~=2 % 'detectRFuse' will not fork for multi-FA FID sequence because alpha excitations with the flip-angle larger than 90 degrees will be detected as refocusing pulses
+    seq.read(seq_file_path,'detectRFuse'); 
+else
+    seq.read(seq_file_path); 
+end
 
 %% we just want t_adc
 [ktraj_adc, t_adc, ktraj, t, t_excitation, t_refocusing]=seq.calculateKspacePP();
