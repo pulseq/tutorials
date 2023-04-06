@@ -29,7 +29,8 @@ for f=1:flip_angles
     end
 end
 
-seq.write('fid.seq')       % Write to pulseq file
+seq.setDefinition('Name', 'fid-mfa');
+seq.write('fid-mfa.seq')       % Write to pulseq file
 %seq.install('siemens');    % copy to scanner
 
 seq.plot();

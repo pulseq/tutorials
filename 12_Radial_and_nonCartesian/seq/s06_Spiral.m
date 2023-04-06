@@ -1,15 +1,17 @@
 % this is an experimental spiral sequence
 
-% Set system limits
-sys = mr.opts('MaxGrad',22,'GradUnit','mT/m',...
-    'MaxSlew',160,'SlewUnit','T/m/s',...
-    'rfRingdownTime', 30e-6, 'rfDeadtime', 100e-6, 'adcDeadTime', 10e-6);  seq=mr.Sequence();          % Create a new sequence object
-
 fov=256e-3; Nx=96; Ny=Nx;  % Define FOV and resolution
 sliceThickness=3e-3;       % slice thinckness
 Nslices=1;
 Oversampling=2;            % oversampling along the readout (trajectory) dimension; I would say it needs to be at least 2
 phi=pi/2;                  % orientation of the readout e.g. for interleaving
+
+% Set system limits
+sys = mr.opts('MaxGrad',22,'GradUnit','mT/m',...
+    'MaxSlew',160,'SlewUnit','T/m/s',...
+    'rfRingdownTime', 30e-6, 'rfDeadtime', 100e-6, 'adcDeadTime', 10e-6);  
+seq=mr.Sequence(sys);      % Create a new sequence object
+warning('OFF', 'mr:restoreShape'); % restore shape is not compatible with spirals and will throw a warning from each plot() or calcKspace() call
 
 % Create fat-sat pulse 
 % (in Siemens interpreter from January 2019 duration is limited to 8.192 ms, and although product EPI uses 10.24 ms, 8 ms seems to be sufficient)

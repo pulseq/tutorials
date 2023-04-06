@@ -57,7 +57,8 @@ else
     fprintf('\n');
 end
 
-seq.write('se.seq')       % Write to pulseq file
+seq.setDefinition('Name', 'se-bg');
+seq.write('se-bg.seq')       % Write to pulseq file
 %seq.install('siemens');    % copy to scanner
 
 % calculate and plot k-spaces

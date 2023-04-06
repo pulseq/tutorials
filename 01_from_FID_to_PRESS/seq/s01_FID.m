@@ -39,6 +39,7 @@ else
     fprintf('\n');
 end
 
+seq.setDefinition('Name', 'fid');
 seq.write('fid.seq')       % Write to pulseq file
 %seq.install('siemens');    % copy to scanner
 

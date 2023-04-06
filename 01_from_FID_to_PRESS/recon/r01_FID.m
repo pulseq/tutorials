@@ -38,9 +38,10 @@ rawdata = permute(data_unsorted, [1,3,2]);
 seq_file_path = [data_file_path(1:end-3) 'seq'];
 fprintf(['loading `' seq_file_path '´ ...\n']);
 seq = mr.Sequence();              % Create a new sequence object
-if nF~=2 % 'detectRFuse' will not fork for multi-FA FID sequence because alpha excitations with the flip-angle larger than 90 degrees will be detected as refocusing pulses
-    seq.read(seq_file_path,'detectRFuse'); 
-else
+seq.read(seq_file_path,'detectRFuse'); 
+if strcmp(seq.getDefinition('Name'),'fid-mfa')
+    fprintf('FID-MFA sequence detected, re-loading the sequence file ...\n');
+    seq = mr.Sequence(); % reload the sequence without detecting the RF pulse use because otherwise the code assumes that we have refocusing pulses...
     seq.read(seq_file_path); 
 end
 

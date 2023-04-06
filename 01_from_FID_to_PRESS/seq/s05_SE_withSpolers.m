@@ -53,7 +53,8 @@ else
     fprintf('\n');
 end
 
-seq.write('se.seq')       % Write to pulseq file
+seq.setDefinition('Name', 'se-sp');
+seq.write('se-sp.seq')       % Write to pulseq file
 %seq.install('siemens');    % copy to scanner
 
 % calculate k-space but only use it to check timing
