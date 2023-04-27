@@ -27,6 +27,6 @@ The source code of the demo sequences and reconstruction scripts is the core of 
 
 ## How to follow 
 
-We strongly recommend using a text compate tool like *meld* (see this [Wikipedia page](https://en.wikipedia.org/wiki/Meld_(software)) and conpare sequences from subsequent steps to visualithe the respective steps.
+We strongly recommend using a text compare tool like *meld* (see this [Wikipedia page](https://en.wikipedia.org/wiki/Meld_(software)) and conpare sequences from subsequent steps to visualithe the respective steps.
 
 
