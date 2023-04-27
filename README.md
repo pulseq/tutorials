@@ -1,4 +1,4 @@
-**Welcome to the Pulse tutorials repository!**
+**Welcome to the Pulseq tutorials repository!**
 
 This is a collection of various Pulseq tutorials, which is supposed to grow in future. If you don't know where to start study the [Pulseq Concepts](./pulseq_Concepts_Nov2022.pdf) presentation and then work through the tutorials one-by-one. Please let us know if your favorite topic is missing or needs more attention, we will do our best to cover it in future.
 
