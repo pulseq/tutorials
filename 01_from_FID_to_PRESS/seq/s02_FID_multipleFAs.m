@@ -15,7 +15,7 @@ flip_angles=9;
 rf = mr.makeBlockPulse(pi/2,'Duration',rfDur, 'system', system);
     
 % Define delays and ADC events
-adc = mr.makeAdc(Nx,'Duration',adcDur, 'system', system, 'delay', TE-rfDur/2-system.rfRingdownTime);
+adc = mr.makeAdc(Nx,'Duration',adcDur, 'system', system, 'delay', TE-rf.shape_dur/2-system.rfRingdownTime);
 
 delayTR=TR-mr.calcDuration(rf);
 assert(delayTR>=0);
