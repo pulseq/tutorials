@@ -20,8 +20,10 @@ g_sp=mr.makeTrapezoid('z','Area',spA,'system',system);
 rf_ref.delay=max(mr.calcDuration(g_sp),rf_ref.delay);
 
 % Define delays and ADC events
-delayTE1=TE/2-(mr.calcDuration(rf_ex)-mr.calcRfCenter(rf_ex)-rf_ex.delay)-rf_ref.delay-mr.calcRfCenter(rf_ref);
-delayTE2=TE/2-mr.calcDuration(rf_ref)+rf_ref.delay+mr.calcRfCenter(rf_ref)-adcDur/2; % this is not perfect, but -adcDur/2/Nx  will break the raster alignment
+% delayTE1=TE/2-(mr.calcDuration(rf_ex)-mr.calcRfCenter(rf_ex)-rf_ex.delay)-rf_ref.delay-mr.calcRfCenter(rf_ref);
+delayTE1 = TE/2 - rf_ex.shape_dur/2 - rf_ex.ringdownTime - rf_ref.delay - rf_ref.shape_dur/2 ;
+% delayTE2=TE/2-mr.calcDuration(rf_ref)+rf_ref.delay+mr.calcRfCenter(rf_ref)-adcDur/2; % this is not perfect, but -adcDur/2/Nx  will break the raster alignment
+delayTE2 = TE/2 - rf_ref.shape_dur/2 - rf_ref.ringdownTime - adcDur / 2 ;
 assert(delayTE2>mr.calcDuration(g_sp));
 
 adc = mr.makeAdc(Nx,'Duration',adcDur, 'system', system, 'delay', delayTE2);
