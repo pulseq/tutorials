@@ -72,12 +72,15 @@ rf_ref2.delay=rf_ref2.delay-mr.calcDuration(g_ref2_pre)+mr.calcDuration(g_spBy1)
 %% Define delays and ADC events
 delayTE1=1e-3; % this delay allows to shift the spin echo within the ADC window
 % we define TE as 2* delay between the centers of the refocusing pulses
-delayTE2=TE/2-(mr.calcDuration(rf_ref1)-mr.calcRfCenter(rf_ref1)-rf_ref1.delay)-g_ref1_post.shape_dur-rf_ref2.delay-mr.calcRfCenter(rf_ref2);
+% delayTE2=TE/2-(mr.calcDuration(rf_ref1)-mr.calcRfCenter(rf_ref1)-rf_ref1.delay)-g_ref1_post.shape_dur-rf_ref2.delay-mr.calcRfCenter(rf_ref2);
+% QC:
+delayTE2=TE/2 - rf_ref1.shape_dur/2 - g_ref1_post.shape_dur - rf_ref2.delay - rf_ref2.shape_dur/2 ;
 assert(delayTE2>=0);
 % we start the ADC object right away after the spoiler
 adc = mr.makeAdc(Nx,'Duration',adcDur, 'system', system);
 
-delayTR=TR-mr.calcDuration(g_ex)-mr.calcDuration(g_refC1)-delayTE1-delayTE2-mr.calcDuration(g_refC2)-mr.calcDuration(adc);
+% delayTR=TR-mr.calcDuration(g_ex)-mr.calcDuration(g_refC1)-delayTE1-delayTE2-mr.calcDuration(g_refC2)-mr.calcDuration(adc);
+delayTR=TR-max(mr.calcDuration(g_ex), mr.calcDuration(rf_ex))-mr.calcDuration(g_refC1)-delayTE1-delayTE2-mr.calcDuration(g_refC2)-mr.calcDuration(adc);
 assert(delayTR>=0);
 
 %% Loop over repetitions and define sequence blocks
