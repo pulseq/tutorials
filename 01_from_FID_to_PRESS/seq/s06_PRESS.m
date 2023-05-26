@@ -28,9 +28,9 @@ g_ex.channel='x';
 g_ref1.channel='y';
 
 %% join spoilers with the slice selection pulses of the refocusing gradients
-% step 1: create pre-pulse to merge into the plato
+% step 1: create pre-gradient to merge into the plato
 g_ref1_pre=mr.makeExtendedTrapezoidArea(g_ref1.channel,0,g_ref1.amplitude,spA,system); 
-% step 2: create post-pulse to start at the plato
+% step 2: create post-gradient to start at the plato
 g_ref1_post=mr.makeExtendedTrapezoidArea(g_ref1.channel,g_ref1.amplitude,0,spA,system);
 % step 3: create a composite gradient 
 g_refC1=mr.makeExtendedTrapezoid(g_ref1_pre.channel,...
