@@ -94,7 +94,7 @@ seq.write('seg-gre.seq')       % Write to pulseq file
 %% plot sequence and k-space diagrams
 
 seq.plot('timeRange', [0 2]*TR); 
-%seq.plot('timeDisp','us','showBlocks',1,'timeRange',[0 2]*TR); %detailed view
+seq.plot('timeDisp','us','showBlocks',1,'timeRange',[0 2]*TR); %detailed view
 
 % k-space trajectory calculation
 [ktraj_adc, t_adc, ktraj, t_ktraj, t_excitation, t_refocusing] = seq.calculateKspacePP();
