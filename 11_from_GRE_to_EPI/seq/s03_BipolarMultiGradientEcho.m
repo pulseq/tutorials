@@ -36,6 +36,7 @@ gzSpoil=mr.makeTrapezoid('z','Area',4/sliceThickness,'system',sys); % 4 cycles o
 
 % Calculate timing (need to decide on the block structure already)
 helperT=ceil((gz.fallTime + gz.flatTime/2 + mr.calcDuration(gxp)/2)/seq.gradRasterTime)*seq.gradRasterTime;
+delayTE = zeros(size(TE)) ;
 for c=1:length(TE)
     delayTE(c)=TE(c) - helperT;
     helperT=helperT+delayTE(c)+mr.calcDuration(gxp);
