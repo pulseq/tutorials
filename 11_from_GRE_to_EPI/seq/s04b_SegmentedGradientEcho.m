@@ -37,7 +37,7 @@ phaseAreas = ((0:floor(Ny/nSeg)-1)-Ny/2)*deltak;
 gyBlip = mr.makeTrapezoid('y','Area',floor(Ny/nSeg)*deltak,'Delay',gxp.riseTime+gxp.flatTime,'system',sys);
 if mr.calcDuration(gyBlip)-mr.calcDuration(gxp)<gyBlip.fallTime
 % QC: If the peak of gyBlip is within the event duration of gxp, move the peak to the end of gxp by adding  (gyBlip.fallTime - mr.calcDuration(gyBlip)+mr.calcDuration(gxp)) to gyBlip's delay.
-% QC: What if the peak is outside of the duration of gxp? answer: This case is not possible, because gyBlip uses the max slew rate to calculate its waveform.
+% QC: What if the peak is outside of the duration of gxp? answer: This case is not possible, because the max slew rate is used to calculate the waveform of gyBlip.
     gyBlip.delay=gyBlip.delay+mr.calcDuration(gxp)-mr.calcDuration(gyBlip)+gyBlip.fallTime; % adjust the delay to have the cut line before the beginning of the ramp down of the blip
 end
 gyBlip_parts = mr.splitGradientAt(gyBlip, mr.calcDuration(gxp), sys);
