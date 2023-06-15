@@ -53,7 +53,7 @@ if mr.calcDuration(gyBlip_parts(2))>gxp.riseTime
     gyBlip_part_tmp.delay=gyBlip_part_tmp.delay+gxp.delay;
 end
 % now for inner echos create a special gy gradient, that will ramp down to 0, stay at 0 for a while and ramp up again
-gyBlip_down_up=mr.addGradients({gyBlip_parts(2), gyBlip_part_tmp}, sys);
+gyBlip_down_up=mr.addGradients({gyBlip_parts(2), gyBlip_part_tmp}, sys); % QC: gyBlip_parts(2) is inserted before gxp. gyBlip_part_tmp with a long delay is inserted after gxp.
 % copy for readability
 gyBlip_up=gyBlip_parts(1);
 gyBlip_down=gyBlip_parts(2);
