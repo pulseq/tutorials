@@ -57,7 +57,7 @@ adcDwell=floor(adcDwellNyquist/sys.adcRasterTime)*sys.adcRasterTime;
 adcSamples=floor(roDuration/adcDwell/4)*4; % on Siemens the number of ADC samples need to be divisible by 4
 adc = mr.makeAdc(adcSamples,'Dwell',adcDwell);
 % realign the ADC with respect to the gradient
-time_to_center=adc.dwell*((adcSamples-1)/2+0.5); % Pulseq (andsiemens) define the samples to happen in the center of the dwell period
+time_to_center=adc.dwell*((adcSamples-1)/2+0.5); % Pulseq (and Siemens) define the samples to happen in the center of the dwell period
 adc.delay=round((gx.riseTime+gx.flatTime/2-time_to_center)/sys.rfRasterTime)*sys.rfRasterTime; 
           % above we adjust the delay to align the trajectory with the gradient.
           % We have to aligh the delay to seq.rfRasterTime (1us) 
