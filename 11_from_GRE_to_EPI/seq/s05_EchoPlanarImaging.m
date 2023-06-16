@@ -23,7 +23,7 @@ roDuration=640e-6;              % not all values are possible, watch out for the
 [rf, gz, gzReph] = mr.makeSincPulse(alpha*pi/180,'Duration',rfDuration,...
     'SliceThickness',sliceThickness,'apodization',0.42,'timeBwProduct',4,'system',sys);
 
-% define the output trigger to play out with every slice excitatuion
+% define the output trigger to play out with every slice excitation
 trig=mr.makeDigitalOutputPulse('ext1','duration', 100e-6,'delay', rf.delay+mr.calcRfCenter(rf)); % possible channels: 'osc0','osc1','ext1'
 
 % Define other gradients and ADC events
