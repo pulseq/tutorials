@@ -11,7 +11,7 @@ sliceThickness=3e-3;            % slice
 TR=130e-3;                       % TR, a single value
 TE=61e-3;                        % only a single TE is accepted now
 nSeg=Ny;                         % number of segments, noy equals to the number of PE lines
-% run this imprvised EPI sequence with and without PE, have a look a the k-space 
+% run this improvised EPI sequence with and without PE, have a look a the k-space 
 
 % more in-depth parameters
 rfSpoilingInc=117;              % RF spoiling increment
