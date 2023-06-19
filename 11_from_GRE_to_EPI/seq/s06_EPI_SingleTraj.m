@@ -11,7 +11,7 @@ alpha=90;                       % flip angle
 sliceThickness=3e-3;            % slice
 %TR=21e-3;                      % ignore TR, go as fast as possible
 %TE=60e-3;                      % ignore TE, go as fast as possible
-% EXERCISE: inerested readers are invited to replace the EPI readout with a
+% EXERCISE: interested readers are invited to replace the EPI readout with a
 %           spiral trajectory
 
 % more in-depth parameters
@@ -38,7 +38,7 @@ gyBlip = mr.makeTrapezoid('y',sys,'Area',-deltak,'Duration',blip_dur); % we use 
 % and at the end, each equal to a half of blip_dur
 % the area between the blips should be equal to kWidth
 % we do a two-step calculation: we first increase the area assuming maximum
-% slew rate and then scale down the amlitude to fix the area 
+% slew rate and then scale down the amplitude to fix the area 
 extra_area=blip_dur/2*blip_dur/2*sys.maxSlew;
 gx = mr.makeTrapezoid('x',sys,'Area',kWidth+extra_area,'duration',roDuration+blip_dur);
 actual_area=gx.area-gx.amplitude/gx.riseTime*blip_dur/2*blip_dur/2/2-gx.amplitude/gx.fallTime*blip_dur/2*blip_dur/2/2;
@@ -62,7 +62,7 @@ adc.delay=round((gx.riseTime+gx.flatTime/2-time_to_center)/sys.rfRasterTime)*sys
           % above we adjust the delay to align the trajectory with the gradient.
           % We have to aligh the delay to seq.rfRasterTime (1us) 
           % this rounding actually makes the sampling points on odd and even readouts
-          % to appear misalligned. However, on the real hardware this misalignment is
+          % to appear misaligned. However, on the real hardware this misalignment is
           % much stronger anyways due to the gradient delays
 
 % finish the blip gradient calculation
