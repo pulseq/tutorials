@@ -23,7 +23,7 @@ roDuration=640e-6;              % not all values are possible, watch out for the
 [rf, gz, gzReph] = mr.makeSincPulse(alpha*pi/180,'Duration',rfDuration,...
     'SliceThickness',sliceThickness,'apodization',0.42,'timeBwProduct',4,'system',sys);
 
-% define the output trigger to play out with every slice excitatuion
+% define the output trigger to play out with every slice excitation
 trig=mr.makeDigitalOutputPulse('ext1','duration', 100e-6,'delay', rf.delay+mr.calcRfCenter(rf)-160e-6); % possible channels: 'osc0','osc1','ext1'
 
 % Define other gradients and ADC events
@@ -57,13 +57,13 @@ adcDwell=floor(adcDwellNyquist/sys.adcRasterTime)*sys.adcRasterTime;
 adcSamples=floor(roDuration/adcDwell/4)*4; % on Siemens the number of ADC samples need to be divisible by 4
 adc = mr.makeAdc(adcSamples,'Dwell',adcDwell);
 % realign the ADC with respect to the gradient
-time_to_center=adc.dwell*((adcSamples-1)/2+0.5); % Pulseq (andsiemens) define the samples to happen in the center of the dwell period
+time_to_center=adc.dwell*((adcSamples-1)/2+0.5); % Pulseq (and Siemens) define the samples to happen in the center of the dwell period
 adc.delay=round((gx.riseTime+gx.flatTime/2-time_to_center)/sys.rfRasterTime)*sys.rfRasterTime; 
           % above we adjust the delay to align the trajectory with the gradient.
           % We have to aligh the delay to seq.rfRasterTime (1us) 
           % this rounding actually makes the sampling points on odd and even readouts
           % to appear misalligned. However, on the real hardware this misalignment is
-          % much stronger anyways due to the grdient delays
+          % much stronger anyways due to the gradient delays
 
 % finish the blip gradient calculation
 % split the blip into two halves and produce a combined synthetic gradient
