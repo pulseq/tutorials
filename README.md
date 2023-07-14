@@ -70,9 +70,9 @@ Initial revision created on June 21 2023
 
 [2.3 Blocks and Events in Pulseq](#23-blocks-and-events-in-pulseq)
 
-[**3. Pulseq tutorials**](#3-pulseq-tutorials)
+[**3. Tutorials overview**](#3-tutorials-overview)
 
-[3.1 01\_from\_FID\_to\_PRESS](#31-01-from_fid_to_press)
+[01\_from\_FID\_to\_PRESS](#01_from_fid_to_press)
 
 [3.2 02\_basic\_gradient\_echo](#basic_gradient_echo)
 
@@ -264,11 +264,11 @@ For more detailed specification of blocks and events, please refer to
 the Pulseq specification documentation at
 <https://pulseq.github.io/specification.pdf>.
 
-# 3. Pulseq tutorials
+# 3. Tutorials overview
 
-This section introduces the tutorial topics one-by-one in details.
+This section briefly introduces the tutorials one-by-one in a bit more detail.
 
-## 3.1 01\_from\_FID\_to\_PRESS
+## 01\_from\_FID\_to\_PRESS
 
 This tutorial introduces a step by step the design of a PRESS sequence
 starting from a very basic FID sequence. See [01_from_FID_to_PRESS](./01_from_FID_to_PRESS)
