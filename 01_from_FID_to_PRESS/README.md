@@ -4,7 +4,8 @@ Welcome to the "From FID to PRESS" tutorial repository! This was initially devel
 
 The tutorial starts with the very basic first steps from an FID and non-slective spin-echo sequence and moves on towards spectroscopic PRESS sequence. The raw data were acquired in a fat-water phantom, which explains the appearence of the off-center press spectrum, which was deliberatly placed to capture both fat and water.
 
-The slide deck entitled [doc/01_from_FID_to_PRESS.pdf](doc/01_from_FID_to_PRESS.pdf) shows the sequence diagrams of all
+The slide deck entitled [doc/01_from_FID_to_PRESS.pdf](doc/01_from_FID_to_PRESS.pdf) explains the basic properties of the objects from which the pulse sequence is built 
+such ar RF and gradient pulses and shows the sequence diagrams of all
 steps and visualises the changes at each step. We recommend using Meld
 software to highlight the source code changes between steps 01 and 05.
 
@@ -57,8 +58,6 @@ The mr.makeExtendedTrapezoid function creates an "arbitrary" gradient by
 combing a set of amplitude points and the corresponding set of time
 points, as shown in Figure 1.
 
-![Figure1](doc/Fig_1.png | width=50)
-
 <img src="doc/Fig_1.png" width="300">
 
 **Figure** **1** slice-selective **sinc pulse** and **gradient** with a
@@ -67,18 +66,14 @@ pair of crusher gradients for selecting desired coherence pathways.
 **pre-** (**post-**) crusher gradient, which are both realized as
 Extended Trapezoids.
 
-The sequence diagram of ***s06*** with 7 blocks. Note that the TE is
+The sequence diagram of ***s06*** includes 7 blocks per TR. Note that the TE is
 defined as 2 \* delay between the centres of the two refocusing RF
 pulses.
-
 
 ## Quick links
 
 Pulseq Matlab repository: 
 https://github.com/pulseq/pulseq
-
-Dropbox link to the measured data and sequences (viewing only): 
-https://www.dropbox.com/sh/l04pm0547yygswk/AAAP4mGeT5Ri0rk8uroGmyita?dl=0
 
 ## Quick instructions
 
@@ -90,7 +85,7 @@ The source code of the demo sequences and reconstruction scripts is the core of 
 
 ## How to follow 
 
-We strongly recommend using a text compate tool like *meld* (see this [Wikipedia page](https://en.wikipedia.org/wiki/Meld_(software)) and conpare sequences from subsequent steps to visualithe the respective steps.
+We strongly recommend using a text compate tool like *meld* (see this [Wikipedia page](https://en.wikipedia.org/wiki/Meld_(software)) and compare sequences from subsequent steps to visualithe the respective steps.
 
 ## Further links
 
