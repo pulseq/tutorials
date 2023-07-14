@@ -35,8 +35,7 @@ where
 * **N** is a sequential single-digit number (this assumes we can only have up to 9 tutorials per complexity level);
 * **Topic** is a free text briefly describing the scope of the tutorial.
 
-For the absolute baginners [01_from_FID_to_PRESS](01_from_FID_to_PRESS) would be
-a good option, which describes how to code sequences starting from a most basic FID pulse-acquire sequence moving on towards a reasonably optimised point-resolved spectroscopy (PRESS) sequence.
+For the absolute baginners [01_from_FID_to_PRESS](01_from_FID_to_PRESS) is a good start, which describes how to code sequences starting from a most basic FID pulse-acquire sequence moving on towards a reasonably optimised point-resolved spectroscopy (PRESS) sequence.
 
 ## Author and version
 
