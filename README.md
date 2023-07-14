@@ -2,7 +2,7 @@
 
 This is a collection of various Pulseq tutorials, which is supposed to grow in future. If you don't know where to start, read through  this document and study the [Pulseq Concepts](./doc/pulseq_Concepts_Nov2022.pdf) presentation. Thereafter work through the tutorials one-by-one. Please let us know if your favorite topic is missing or needs more attention, we will do our best to cover it in future.
 
-# Foreword
+## Foreword
 
 The *Pulseq*[^1] software provides an open-source framework for the
 development, analysis, display, and execution of magnetic resonance (MR)
@@ -18,6 +18,9 @@ provides detailed instructions on how to work through the Tutorial.
 After going through this guided tour, you will probably appreciate both
 the simplicity and the power of Pulseq and be able to move on to
 building your own sequences with Pulseq!
+
+If you come across any problems, please contact our pulseq
+team: pulseq.mr-at-uniklinik-freiburg.de
 
 ## Naming convention of the tutorials in the collection
 The tutorials are ordered by increasing complexity, so if unsure where to start, 01_... is a good option.
@@ -35,17 +38,14 @@ where
 For the absolute baginners [01_from_FID_to_PRESS](01_from_FID_to_PRESS) would be
 a good option, which describes how to code sequences starting from a most basic FID pulse-acquire sequence moving on towards a reasonably optimised point-resolved spectroscopy (PRESS) sequence.
 
-# Brief Pulseq Tutorial Instructions
+## Author and version
 
-by Qingping Chen 
+This tutorial was written by Qingping Chen (with some edits by Maxim Zaitsev)
 
 *Division of Medical Physics, Department of Radiology,
 University Medical Center Freiburg, Germany*
 
-Created on June 21 2023
-
-If you come across any problems, please contact our pulseq
-team: pulseq.mr-at-uniklinik-freiburg.de
+Initial revision created on June 21 2023
 
 # Contents 
 
