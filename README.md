@@ -1,4 +1,4 @@
-# Welcome to the Pulseq tutorials repository!**
+# Welcome to the Pulseq tutorials repository!
 
 This is a collection of various Pulseq tutorials, which is supposed to grow in future. If you don't know where to start, read through  this document and study the [Pulseq Concepts](./doc/pulseq_Concepts_Nov2022.pdf) presentation. Thereafter work through the tutorials one-by-one. Please let us know if your favorite topic is missing or needs more attention, we will do our best to cover it in future.
 
@@ -51,29 +51,29 @@ team: pulseq.mr-at-uniklinik-freiburg.de
 
 [**Foreword**](#foreword)
 
-[**1. Prerequisites**](#1.-prerequisites)
+[**1. Prerequisites**](#1-prerequisites)
 
-[1.1 MR Physics Background](#1.1.-mr-physics-background)
+[1.1 MR Physics Background](#11-mr-physics-background)
 
-[1.2 Programming Tool](#programming-tools)
+[1.2 Programming Tool](#12-programming-tools)
 
-[1.3 Pulseq Software](#pulseq-software)
+[1.3 Pulseq Software](#13-pulseq-software)
 
-[1.4 mapVBVD Software](#mapvbvd-software)
+[1.4 mapVBVD Software](#14-mapvbvd-software)
 
-[1.5 Text Compare Tool](#text-compare-tool)
+[1.5 Text Compare Tool](#15-text-compare-tool)
 
-[**2. Introduction to Pulseq**](#introduction-to-pulseq)
+[**2. Introduction to Pulseq**](#2-introduction-to-pulseq)
 
-[2.1 Matlab and Pulseq Sequence Files](#matlab-and-pulseq-sequence-files)
+[2.1 Matlab and Pulseq Sequence Files](#21-matlab-and-pulseq-sequence-files)
 
-[2.2 Pulseq Interpreter for Siemens scanner](#pulseq-interpreter-for-siemens-scanner)
+[2.2 Pulseq Interpreter for Siemens scanner](#22-pulseq-interpreter-for-siemens-scanner)
 
-[2.3 Blocks and Events in Pulseq](#blocks-and-events-in-pulseq)
+[2.3 Blocks and Events in Pulseq](#23-blocks-and-events-in-pulseq)
 
-[**3. Pulseq tutorial**](#pulseq-tutorials)
+[**3. Pulseq tutorials**](#3-pulseq-tutorials)
 
-[3.1 01\_from\_FID\_to\_PRESS](#from_fid_to_press)
+[3.1 01\_from\_FID\_to\_PRESS](#31-01-from_fid_to_press)
 
 [3.2 02\_basic\_gradient\_echo](#basic_gradient_echo)
 
