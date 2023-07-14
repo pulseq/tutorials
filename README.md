@@ -32,7 +32,7 @@ where
 * **N** is a sequential single-digit number (this assumes we can only have up to 9 tutorials per complexity level);
 * **Topic** is a free text briefly describing the scope of the tutorial.
 
-If you do not know where to start, the [01_from_FID_to_PRESS](01_from_FID_to_PRESS) would be
+For the absolute baginners [01_from_FID_to_PRESS](01_from_FID_to_PRESS) would be
 a good option, which describes how to code sequences starting from a most basic FID pulse-acquire sequence moving on towards a reasonably optimised point-resolved spectroscopy (PRESS) sequence.
 
 # Brief Pulseq Tutorial Instructions
