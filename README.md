@@ -272,7 +272,9 @@ This section introduces the tutorial topics one-by-one in details.
 ## 3.1 01\_from\_FID\_to\_PRESS
 
 This tutorial introduces a step by step the design of a PRESS sequence
-starting from a very basic FID sequence. See [tutorials/01_from_FID_to_PRESS](https://github.com/pulseq/tutorials/tree/main/01_from_FID_to_PRESS)
+starting from a very basic FID sequence. See [01_from_FID_to_PRESS](./01_from_FID_to_PRESS)
+
+**BEYOND THIS POINT IT IS WORKS IN PROGRESS**
 
 ## 3.2 02\_basic\_gradient\_echo
 
