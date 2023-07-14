@@ -92,6 +92,5 @@ We strongly recommend using a text compate tool like *meld* (see this [Wikipedia
 Check out the main *Pulseq* repository at https://github.com/pulseq/pulseq and familarizing yourself with the code, example sequences and reconstructon scripts (see 
 [pulseq/matlab/demoSeq](https://github.com/pulseq/pulseq/tree/master/matlab/demoSeq) and [pulseq/matlab/demoRecon](https://github.com/pulseq/pulseq/tree/master/matlab/demoRecon)). If you already use Pulseq, consider updating to the current version.
 
-[Handout materials](Handout.pdf) TODO.
 
 
