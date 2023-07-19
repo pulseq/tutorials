@@ -52,22 +52,22 @@ transverse magnetisation.
 
 ***s01*** is a *basic* 2D slice-selective GRE sequence. Each TR of this
 sequence contains 5 blocks. The corresponding k-space is shown in Figure
-2.
+1.
 
-![](media/image3.png)
+<img src="doc/Fig_1.png" width="300">
 
-**Figure** **2** K-space of s01\_GRE\_tutorial\_step0 sequence (6\*6
+**Figure** **1** K-space of s01\_GRE\_tutorial\_step0 sequence (6\*6
 encodes).
 
 ***s02\_GRE\_tutorial\_step1***
 
 ***s02*** is a 2D slice-selective GRE sequence with three spoiler
 gradients added in slice-selective, readout and phase-encoding
-direction. Its k-space is shown in Figure 3.
+direction. Its k-space is shown in Figure 2.
 
-![](media/image4.png)
+<img src="doc/Fig_2.png" width="300">
 
-**Figure** **3** K-space of s02\_GRE\_tutorial\_step1 sequence (6\*6
+**Figure** **2** K-space of s02\_GRE\_tutorial\_step1 sequence (6\*6
 encodes).
 
 ***s03\_GRE\_tutorial\_step2***
@@ -76,11 +76,11 @@ encodes).
 gradients in slice-selective and readout directions and one rewinder
 gradient in the phase-encoding direction. It is built by altering the
 gyPost gradient in ***s01*** to rephase in the phase-encoding direction
-for subsequent phase-encoding steps. The k-space is shown in Figure 4.
+for subsequent phase-encoding steps. The k-space is shown in Figure 3.
 
-![](media/image5.png)
+<img src="doc/Fig_3.png" width="300">
 
-**Figure** **4** K-space of s03\_GRE\_tutorial\_step2 sequence (6\*6
+**Figure** **3** K-space of s03\_GRE\_tutorial\_step2 sequence (6\*6
 encodes).
 
 ***s04\_GRE\_tutorial\_step3***
