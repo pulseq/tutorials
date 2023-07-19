@@ -128,7 +128,11 @@ and installed by adding its directory to Matlab's path.
 We recommend using a text comparison tool to compare the sequences
 within the subsequent steps to visualise the changes that occur at each
 step. *Meld* software can be used for the text comparison and can be
-downloaded from <https://meldmerge.org/>.
+downloaded from <https://meldmerge.org/>. Using Meld or other comparable
+software packages it is possible to very quickly make the relevant changes
+easily visible, as in the example below.
+
+![Meld_Comparison](./doc/meld_comparison.png)
 
 # 2. Introduction to Pulseq
 
