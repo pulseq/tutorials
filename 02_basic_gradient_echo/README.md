@@ -54,7 +54,7 @@ transverse magnetisation.
 sequence contains 5 blocks. The corresponding k-space is shown in Figure
 1.
 
-<img src="doc/Fig_1.png" width="300">
+<img src="doc/Fig_1.png" width="230">
 
 **Figure** **1** K-space of s01\_GRE\_tutorial\_step0 sequence (6\*6
 encodes).
@@ -65,7 +65,7 @@ encodes).
 gradients added in slice-selective, readout and phase-encoding
 direction. Its k-space is shown in Figure 2.
 
-<img src="doc/Fig_2.png" width="300">
+<img src="doc/Fig_2.png" width="350">
 
 **Figure** **2** K-space of s02\_GRE\_tutorial\_step1 sequence (6\*6
 encodes).
@@ -78,7 +78,7 @@ gradient in the phase-encoding direction. It is built by altering the
 gyPost gradient in ***s01*** to rephase in the phase-encoding direction
 for subsequent phase-encoding steps. The k-space is shown in Figure 3.
 
-<img src="doc/Fig_3.png" width="300">
+<img src="doc/Fig_3.png" width="350">
 
 **Figure** **3** K-space of s03\_GRE\_tutorial\_step2 sequence (6\*6
 encodes).
