@@ -2,22 +2,19 @@
 %
 % needs mapVBVD in the path
 
-%% Load the latest file from a dir
-%path='../IceNIH_RawSend'; % directory to be scanned for data files
-%path='/data/Dropbox/mriTogether_Pulseq_liveDemo/dataPrerecorded';
-%path='/data/Dropbox/mriTogether_Pulseq_liveDemo/dataLive';
-path='/ad/O/Teaching/Pulseq_Tutorials/tutorial_fromGRE_toEPI/data';
+%% Load data sorted by name
+path='./tutorials/11_from_GRE_to_EPI/data'; % directory to be scanned for data files
+nF=6; % the number of the data set to load; in this tutorial it is only makes sense for #6 and on
 
-if path(end)~=filesep, path(end+1)=filesep; end
 pattern='*.seq';
-D=dir([path pattern]);
-[~,I]=sort([D(:).datenum]);
-
-seq_file_path=[path D(I(end-0)).name]; % use end-1 to reconstruct the second-last data set, etc.
+D=dir([path filesep pattern]);
+[~,I]=sort(string({D(:).name}));
+seq_file_path=[path filesep D(I(nF)).name];
 
 %% Load the Pulseq sequence from file
 seq = mr.Sequence();              % Create a new sequence object
 seq.read(seq_file_path,'detectRFuse');
+fprintf(['loading `' seq_file_path '´ ...\n']);
 seqName=seq.getDefinition('Name');
 if ~isempty(seqName), fprintf('sequence name: %s\n',seqName); end
 [ktraj_adc, t_adc, ktraj, t_ktraj, t_excitation, t_refocusing] = seq.calculateKspacePP();
@@ -42,7 +39,7 @@ else
 end
 
 %% if necessary re-tune the trajectory delay to supress ghosting
-traj_recon_delay=0e-6;%3.23e-6;%-1e-6;%3.90e-6;%-1.03e-6; % adjust this parameter to supress ghosting (negative allowed) (our trio -1.0e-6, prisma +3.9e-6; avanto +3.88)
+traj_recon_delay=0.0e-6;%3.23e-6;%-1e-6;%3.90e-6;%-1.03e-6; % adjust this parameter to supress ghosting (negative allowed) (our trio -1.0e-6, prisma +3.9e-6; avanto +3.88)
 [ktraj_adc, t_adc, ktraj, t_ktraj, t_excitation, t_refocusing] = seq.calculateKspacePP('trajectory_delay', traj_recon_delay);
 %[ktraj_adc, ktraj, t_excitation, t_refocusing, t_adc] = seq.calculateKspace('trajectory_delay', traj_recon_delay);
 %ktraj_adc_nodelay=seq.calculateKspace('trajectory_delay', 10e-6);
@@ -182,4 +179,6 @@ if delta_ky>0, data_xy=flip(data_xy,3); end
 %% show image(s)
 figure;imab(sqrt(squeeze(sum(abs(data_xy(:,:,:,:).^2),2))));axis('square');colormap('gray');
 title('image(s), EPI recon');
-saveas(gcf,[basic_file_path '_image_2depi'],'png');
+add='';
+if abs(traj_recon_delay)>eps, add='_delay'; end
+saveas(gcf,[basic_file_path '_image_2depi' add],'png');

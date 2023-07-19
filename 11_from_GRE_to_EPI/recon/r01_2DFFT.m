@@ -9,28 +9,13 @@
 %     the data
 
 %% Load data sorted by name
-path='/data/Dropbox/Pulseq_ismrm.it/dataSiemens'; % directory to be scanned for data files
-nF=14; % the number of the data set to load; "8" is the first imaging scan of this tutorial
+path='./tutorials/11_from_GRE_to_EPI/data'; % directory to be scanned for data files
+nF=1; % the number of the data set to load; 
 
 pattern='*.seq';
 D=dir([path filesep pattern]);
 [~,I]=sort(string({D(:).name}));
 seq_file_path=[path filesep D(I(nF)).name];
-
-%% Load the latest file from the specified directory
-% %path='../IceNIH_RawSend'; % directory to be scanned for data files
-% %path='/data/Dropbox/mriTogether_Pulseq_liveDemo/dataPrerecorded';
-% %path='/data/Dropbox/mriTogether_Pulseq_liveDemo/dataLive';
-% path='/ad/O/Teaching/Pulseq_Tutorials/tutorial_fromGRE_toEPI/data';
-% 
-% if path(end)~=filesep, path=[path filesep]; end
-% 
-% pattern='*.seq';
-% D=dir([path pattern]);
-% [~,I]=sort([D(:).datenum]);
-% seq_file_path=[path D(I(1)).name]; % use end-1 to reconstruct the second-last data set, etc...
-%                                        % or replace I(end-0) with I(1) to process the first dataset, I(2) for the second, etc...
-
                                        
 % keep basic filename without the extension
 [p,n,e] = fileparts(seq_file_path);
@@ -178,7 +163,7 @@ else
     imab(abs(images)); title('reconstructed image(s)');
 end
 colormap('gray');
-%saveas(gcf,[basic_file_path '_image_2dfft'],'png');
+saveas(gcf,[basic_file_path '_image_2dfft'],'png');
 
 %% reconstruct field map (optional)
 

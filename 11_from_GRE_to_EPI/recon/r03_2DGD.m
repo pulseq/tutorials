@@ -2,16 +2,15 @@
 %
 % needs mapVBVD in the path
 
-%% Load the latest file from a dir
-%path='../IceNIH_RawSend/data'; % directory to be scanned for data files
-%path='/storage/dropbox-pulseq/Dropbox/mriTogether_Pulseq_liveDemo/dataPrerecorded';
-path='/ad/O/Teaching/Pulseq_Tutorials/tutorial_fromGRE_toEPI/data';
+%% Load data sorted by name
+path='./tutorials/11_from_GRE_to_EPI/data'; % directory to be scanned for data files
+nF=12; % the number of the data set to load; you can grid any data with pulseq, but in this tutorial it is only necessary for #12
 
-if path(end)~=filesep, path(end+1)=filesep; end
 pattern='*.seq';
-D=dir([path pattern]);
-[~,I]=sort([D(:).datenum]);
-seq_file_path = [path D(I(end)).name]; % use end-1 to reconstruct the second-last data set, etc.
+D=dir([path filesep pattern]);
+[~,I]=sort(string({D(:).name}));
+seq_file_path=[path filesep D(I(nF)).name];
+
 
 %% alternatively just provide the path to the .seq file
 %seq_file_path='../interpreters/siemens/data_example/gre_example.seq'
@@ -54,7 +53,7 @@ end
 
 %% calculate k-space trajectory
 %[3.5 4 0] % for AMR 2D-UTE
-traj_recon_delay=-3*1e-6;% [0.527 -1.367 0]; % adjust this parameter to potentially improve resolution & geometric accuracy. It can be calibrated by inverting the spiral revolution dimension and making two images match. for our Prisma and a particular trajectory we found 1.75e-6
+traj_recon_delay=-3.0e-6;% [0.527 -1.367 0]; % adjust this parameter to potentially improve resolution & geometric accuracy. It can be calibrated by inverting the spiral revolution dimension and making two images match. for our Prisma and a particular trajectory we found 1.75e-6
 grad_offsets=[0 0 0];
 
 seq = mr.Sequence();              % Create a new sequence object
@@ -169,5 +168,7 @@ else
     imab(abs(images)); title('reconstructed image(s)');
 end
 colormap('gray');
-saveas(gcf,[basic_file_path '_image_2d_gridding'],'png');
+add='';
+if abs(traj_recon_delay)>eps, add='_delay'; end
+saveas(gcf,[basic_file_path '_image_2d_gridding' add],'png');
 
