@@ -29,8 +29,8 @@ transverse magnetisation.
     concepts have been tried in the MR history, with the strength of the
     spoiler gradient remaining constant or varied linearly or
     semi-randomly from TR to TR. In the present example a constant
-    spoiler is used and an appropriate phantom with a sufficiently long
-    T2 it demonstrates that gradient spoiling does not work unless the
+    spoiler is used, and an appropriate phantom with a sufficiently long
+    T2 demonstrates that gradient spoiling does not work unless the
     spoiler is so strong that the intrinsic diffusion weighting would
     kill the signal.
 
@@ -99,7 +99,7 @@ phase offset, $\text{φ}_{\text{i}}$, in the *i*^th^ phase-encoding step.
 
 ***s06*** adds some *dummy* scans (i.e. plays out multiple cycles of the
 sequence without recording a signal) to ***s05*** to establish (near)
-steady-state magnetisation in the GRE sequence prior to beginning of the
+steady-state magnetisation in the GRE sequence prior to the beginning of the
 ADC recording. For more details about dummy scans, please go to
 <https://mriquestions.com/dummy-cycles.html>.
 
@@ -118,9 +118,9 @@ The source code of the demo sequences and reconstruction scripts is the core of 
 
 ## How to follow 
 
-We strongly recommend using a text compate tool like *meld* (see this [Wikipedia page](https://en.wikipedia.org/wiki/Meld_(software)) and compare sequences from subsequent steps to visualithe the respective steps.
+We strongly recommend using a text compare tool like *meld* (see this [Wikipedia page](https://en.wikipedia.org/wiki/Meld_(software)) and compare sequences from subsequent steps to visualise the respective steps.
 
 ## Further links
 
-Check out the main *Pulseq* repository at https://github.com/pulseq/pulseq and familarizing yourself with the code, example sequences and reconstructon scripts (see 
+Check out the main *Pulseq* repository at https://github.com/pulseq/pulseq and familarising yourself with the code, example sequences, and reconstruction scripts (see 
 [pulseq/matlab/demoSeq](https://github.com/pulseq/pulseq/tree/master/matlab/demoSeq) and [pulseq/matlab/demoRecon](https://github.com/pulseq/pulseq/tree/master/matlab/demoRecon)). If you already use Pulseq, consider updating to the current version.
