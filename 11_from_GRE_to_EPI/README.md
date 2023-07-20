@@ -3,12 +3,12 @@
 
 Welcome to the "From GRE to EPI" tutorial repository! This was initially developed for the live Pulseq software demonstration and hands-on session at **MRI Together 2021** on-line conference. 
 
-This tutorial introduces the way to establishm an Echo-Planar Imaging (EPI)
+This tutorial introduces the way to establish an Echo-Planar Imaging (EPI)
 sequence based on a GRE sequence via multi-echo and segmented GRE sequences. 
 
-[Handout materials](./doc/Handout.pdf) that accompanied the original session are available in the PDF format containing the slides from the presentation with some additional material and explanations. In particular, the second part of the document (page 18 and on) describe the code examples. Please keep in mind that these examples were specifically developed for the demo, so you might find some useful information there even if you are familiar with the previous versions of Pulseq. 
+[Handout materials](./doc/Handout.pdf) that accompanied the original session are available in the PDF format containing the slides from the presentation with some additional material and explanations. In particular, the second part of the document (page 18 and on) describes the code examples. Please keep in mind that these examples were specifically developed for the demo, so you might find some useful information there, even if you are familiar with the previous versions of Pulseq. 
 
-Additionally the slide deck entitled [11_from_GRE_to_EPI.pdf](./doc/11_from_GRE_to_EPI.pdf) shows sequence diagrams of all steps and visualises the changes at each step.
+Additionally, the slide deck entitled [11_from_GRE_to_EPI.pdf](./doc/11_from_GRE_to_EPI.pdf) shows sequence diagrams of all steps and visualises the changes at each step.
 
 ***s01\_GradientEcho***
 
@@ -115,10 +115,10 @@ https://github.com/pulseq/pulseq
 
 ## How to follow 
 
-We strongly recommend using a text compate tool like *meld* (see this [Wikipedia page](https://en.wikipedia.org/wiki/Meld_(software)) and compare sequences from subsequent steps to visualithe the respective steps.
+We strongly recommend using a text compare tool like *meld* (see this [Wikipedia page](https://en.wikipedia.org/wiki/Meld_(software)) and compare sequences from subsequent steps to visualise the respective steps.
 
 ## Further links
 
-Check out the main *Pulseq* repository at https://github.com/pulseq/pulseq and familarizing yourself with the code, example sequences and reconstructon scripts (see 
+Check out the main *Pulseq* repository at https://github.com/pulseq/pulseq and familarising yourself with the code, example sequences and reconstruction scripts (see 
 [pulseq/matlab/demoSeq](https://github.com/pulseq/pulseq/tree/master/matlab/demoSeq) and [pulseq/matlab/demoRecon](https://github.com/pulseq/pulseq/tree/master/matlab/demoRecon)). If you already use Pulseq, consider updating to the current version.
 
