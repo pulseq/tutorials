@@ -70,7 +70,7 @@ Initial revision created on June 21 2023
 
 [2.3 Blocks and Events in Pulseq](#23-blocks-and-events-in-pulseq)
 
-[**3. Tutorials overview**](#3-tutorials-overview)
+[**3. Tutorials Overview**](#3-tutorials-overview)
 
 [From\_FID\_to\_PRESS](from_fid_to_press)
 
@@ -266,27 +266,27 @@ For more detailed specification of blocks and events, please refer to
 the Pulseq specification documentation at
 <https://pulseq.github.io/specification.pdf>.
 
-# 3. Tutorials overview
+# 3. Tutorials Overview
 
 This section briefly introduces the tutorials one-by-one in a bit more detail.
 
 ## From\_FID\_to\_PRESS
 
-This tutorial introduces a step by step the design of a PRESS sequence
-starting from a very basic FID sequence. See [01_from_FID_to_PRESS](./01_from_FID_to_PRESS)
+This tutorial introduces a step-by-step design of a PRESS sequence
+starting from a very basic FID sequence. See [01_from_FID_to_PRESS](./01_from_FID_to_PRESS).
 
 ## Basic\_gradient\_echo
 
 This tutorial demonstrates how a very basic gradient-echo sequence (GRE) can be topped up with various degrees of sophistication to achieve a desired steady-state
-magnetisation evolution with T1 contrast. See [02_basic_gradient_echo](./02_basic_gradient_echo)
+magnetisation evolution with T1 contrast. See [02_basic_gradient_echo](./02_basic_gradient_echo).
 
 ## From\_GRE\_to\_EPI
 
-This tutorial demonstrates a possible evolution of a gradient-echo sequence (GRE) to a multi-echo GRE, segmented GRE and finally to an echo-planar sequence (EPI). See [11_from_GRE_to_EPI](./11_from_GRE_to_EPI)
+This tutorial demonstrates a possible evolution of a gradient-echo sequence (GRE) to a multi-echo GRE, segmented GRE and finally to an echo-planar sequence (EPI). See [11_from_GRE_to_EPI](./11_from_GRE_to_EPI).
 
 ## Radial\_and\_nonCartesian
 
-This tutorial presents two simple radial sequences that are derived from the corresponding Cartesian counterparts. Additionally a fast radial GRE and a very basic 2D spiral are itroduced. See [12_Radial_and_nonCartesian](./12_Radial_and_nonCartesian)
+This tutorial presents two simple radial sequences that are derived from the corresponding Cartesian counterparts. Additionally, a fast radial GRE and a very basic 2D spiral are introduced. See [12_Radial_and_nonCartesian](./12_Radial_and_nonCartesian).
 
 
 [^1]: Layton KJ, Kroboth S, Jia F, et al. Pulseq: A rapid and
