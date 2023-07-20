@@ -286,11 +286,9 @@ magnetisation evolution with T1 contrast. See [02_basic_gradient_echo](./02_basi
 
 This tutorial demonstrates a possible evolution of a gradient-echo sequence (GRE) to a multi-echo GRE, segmented GRE and finally to an echo-planar sequence (EPI). See [11_from_GRE_to_EPI](./11_from_GRE_to_EPI)
 
-**BEYOND THIS POINT IT IS WORKS IN PROGRESS**
+## Radial\_and\_nonCartesian
 
-## 3.4 12\_Radial\_and\_nonCartesian
-
-aaa
+This tutorial presents two simple radial sequences that are derived from the corresponding Cartesian counterparts. Additionally a fast radial GRE and a very basic 2D spiral are itroduced. See [12_Radial_and_nonCartesian](./12_Radial_and_nonCartesian)
 
 
 [^1]: Layton KJ, Kroboth S, Jia F, et al. Pulseq: A rapid and

@@ -4,10 +4,6 @@ Welcome to the "Radial and Non-Cartesian" tutorial repository! This was initiall
 
 This tutorial presents two simple radial sequences that are derived from the corresponding Cartesian counterparts. Additionally a fast radial GRE sequence is presented and a very basic 2D spiral is itroduced. The slide deck entitled [12_Radial_and_nonCartesian.pdf](./doc/12_Radial_and_nonCartesian.pdf) shows sequence diagrams of all steps and visualises the changes at each step.
 
- The slide titled ***12\_Radial\_and\_nonCartesian.pptx***
-shows the sequence diagrams of all steps and visualises the changes at
-each step.
-
 ***s01\_CartesianSE***
 
 ***s01*** describes a 2D slice-selective SE sequence with 7 blocks in
