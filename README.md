@@ -290,57 +290,8 @@ This tutorial demonstrates a possible evolution of a gradient-echo sequence (GRE
 
 ## 3.4 12\_Radial\_and\_nonCartesian
 
-This tutorial introduces the steps necessary for developing
-non-Cartesian sequences (radial and spiral) based on Cartesian
-sequences. The slide titled ***12\_Radial\_and\_nonCartesian.pptx***
-shows the sequence diagrams of all steps and visualises the changes at
-each step.
+aaa
 
-***s01\_CartesianSE***
-
-***s01*** describes a 2D slice-selective SE sequence with 7 blocks in
-each TR. Note that the polarity of the gy gradient in deltaTR (that is
-the polarity of both phase encoding and rephrasing gradients) remains
-unchanged due to the 180° refocusing RF pulse.
-
-***s02\_RadialSE***
-
-***s02*** describes a 2D slice-selective radial sequence, built based on
-***s01*** using the mr.rotate function. The mr.rotate function rotates
-the readout gradient and its pre-phaser around the *z*-axis to a certain
-angle, which projects the gradient into the *x*- and *y-*axis and thus
-produces two components.
-
-***s03\_CartesianGradientEcho***
-
-***s03*** describes a 2D slice-selective Cartesian GRE sequence, similar
-as ***s01*** from the Tutorial 11\_from\_GRE\_to\_EPI.
-
-***s04\_RadialGradientEcho***
-
-***s04*** describes a 2D slice-selective radial GRE sequence built based
-on ***s03***.
-
-***s05\_FastRadialGradientEcho***
-
-***s05*** describes a 2D slice-selective radial GRE sequence with the
-shortest timing. The mr.addGradients function combines slice-selective
-gradient and slice-refocusing gradient into a single "ExtendedTrapezoid"
-gradient. The mr.align function is used to position the gxPre gradient
-right after the RF pulse and before the end of the slice-refocusing
-gradient. The flat time of the readout gradient is extended for
-spoiling. The whole sequence has a total of 2 blocks per TR.
-
-***s06\_Spiral***
-
-***s06*** describes a 2D slice-selective spiral sequence with fat
-saturation. A Gaussian RF pulse followed by a spoiling gradient in the
-*z*-axis is used for fat saturation. A raw Archimedean spiral is
-generated and then resampled to stay directly under the slew rate and
-maximum gradient limits. The mr.traj2grad function calculates gradient
-strength and slew rate based on k-space trajectory. The
-mr.makeArbitraryGrad function generates an arbitrary gradient (e.g.
-spiral).
 
 [^1]: Layton KJ, Kroboth S, Jia F, et al. Pulseq: A rapid and
     hardware-independent pulse sequence prototyping framework. *Magn
