@@ -81,7 +81,7 @@ cmplx_diff_no_channels=sum(cmplx_diff,3);
 
 figure; imagesc(angle(cmplx_diff_no_channels));
 
-%% pick the pure X and pure Y differences, plot them and extimate the slope
+%% pick the pure X and pure Y differences, plot them and estimate the slope
 if length(i_pure2)<2
     [~,p2]=min(abs(mod(prg_angle-prg_angle(1)+2*pi,2*pi)-pi)); % look for the projection closest to the opposite to the 1st 
     i_pure1=[1 p2];

@@ -70,6 +70,6 @@ figure; plot(t_ktraj, ktraj'); % plot the entire k-space trajectory
 hold on; plot(t_adc,ktraj_adc(1,:),'.'); % and sampling points on the kx-axis
 
 % calculate real TE and TR, etc
-% reported TR will be slighlty higher for Nrep=1 becuse it uses TA instead
+% reported TR will be slightly higher for Nrep=1 because it uses TA instead
 rep = seq.testReport; 
 fprintf([rep{:}]); 

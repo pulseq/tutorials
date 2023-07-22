@@ -11,7 +11,7 @@ sliceThickness=3e-3;            % slice
 %TR=21e-3;                      % ignore TR, go as fast as possible
 %TE=60e-3;                      % ignore TE, go as fast as possible
 % TODO: run this EPI sequence with and without PE, to calibrate the delay
-% TODO: change MaxGrad/MaxSlew/roDuration to see what happends to the
+% TODO: change MaxGrad/MaxSlew/roDuration to see what happens to the
 % stimulation (e.g. 80/200/500)
 
 % more in-depth parameters
@@ -34,7 +34,7 @@ kWidth = Nx*deltak;
 blip_dur = ceil(2*sqrt(deltak/sys.maxSlew)/sys.gradRasterTime/2)*sys.gradRasterTime*2; % we round-up the duration to 2x the gradient raster time
 gyBlip = mr.makeTrapezoid('y',sys,'Area',-deltak,'Duration',blip_dur); % we use negative blips to save one k-space line on our way towards the k-space center
 
-% readout gradient is a truncated trapezoid with dead times at the beginnig
+% readout gradient is a truncated trapezoid with dead times at the beginning
 % and at the end, each equal to a half of blip_dur
 % the area between the blips should be equal to kWidth
 % we do a two-step calculation: we first increase the area assuming maximum
