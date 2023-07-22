@@ -86,7 +86,7 @@ p1=1;
 [~,p2]=min(abs(mod(prg_angle-prg_angle(p1)+2*pi,2*pi)-pi)); % look for the projection closest to the opposite to p1 
 figure;plot(abs(data_fft1c(1:end,p1,1)));hold on;plot(abs(data_fft1c(end:-1:1,p2,1))); title('comparing opposite projections');
 
-%% the actuall iRadon transform
+%% the actual iRadon transform
 theta=270-prg_angle/pi*180;
 for c=1:channels
     % the classical (absolute value) transform
