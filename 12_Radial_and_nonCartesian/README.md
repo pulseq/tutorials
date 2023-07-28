@@ -2,7 +2,7 @@
 
 Welcome to the "Radial and Non-Cartesian" tutorial repository! This was initially developed as a part of a live demo at the virtual ISMRM meeting in 2020 and was extended somewhat further thereafter. 
 
-This tutorial presents two simple radial sequences that are derived from the corresponding Cartesian counterparts. Additionally a fast radial GRE sequence is presented and a very basic 2D spiral is itroduced. The slide deck entitled [12_Radial_and_nonCartesian.pdf](./doc/12_Radial_and_nonCartesian.pdf) shows sequence diagrams of all steps and visualises the changes at each step.
+This tutorial presents two simple radial sequences that are derived from the corresponding Cartesian counterparts. Additionally, a fast radial GRE sequence is presented, and a very basic 2D spiral is introduced. The slide deck entitled [12_Radial_and_nonCartesian.pdf](./doc/12_Radial_and_nonCartesian.pdf) shows sequence diagrams of all steps and visualises the changes at each step.
 
 ***s01\_CartesianSE***
 
@@ -64,10 +64,10 @@ https://github.com/pulseq/pulseq
 
 ## How to follow 
 
-We strongly recommend using a text compate tool like *meld* (see this [Wikipedia page](https://en.wikipedia.org/wiki/Meld_(software)) and compare sequences from subsequent steps to visualithe the respective steps.
+We strongly recommend using a text compare tool like *meld* (see this [Wikipedia page](https://en.wikipedia.org/wiki/Meld_(software)) and compare sequences from subsequent steps to visualise the respective steps.
 
 ## Further links
 
-Check out the main *Pulseq* repository at https://github.com/pulseq/pulseq and familarizing yourself with the code, example sequences and reconstructon scripts (see 
+Check out the main *Pulseq* repository at https://github.com/pulseq/pulseq and familarising yourself with the code, example sequences and reconstruction scripts (see 
 [pulseq/matlab/demoSeq](https://github.com/pulseq/pulseq/tree/master/matlab/demoSeq) and [pulseq/matlab/demoRecon](https://github.com/pulseq/pulseq/tree/master/matlab/demoRecon)). If you already use Pulseq, consider updating to the current version.
 
