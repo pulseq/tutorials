@@ -41,10 +41,11 @@ catch
     twix_obj = mapVBVD(data_file_path);
     if iscell(twix_obj)
         data_unsorted = double(twix_obj{end}.image.unsorted());
+        seqHash_twix=twix_obj{end}.hdr.Dicom.tSequenceVariant;
     else
         data_unsorted = double(twix_obj.image.unsorted());
-    end
-    seqHash_twix=twix_obj.hdr.Dicom.tSequenceVariant;
+        seqHash_twix=twix_obj.hdr.Dicom.tSequenceVariant;
+    end    
     if length(seqHash_twix)==32
         fprintf(['raw data contain pulseq-file signature ' seqHash_twix '\n']);
     end
@@ -53,7 +54,7 @@ end
 
 %% calculate k-space trajectory
 %[3.5 4 0] % for AMR 2D-UTE
-traj_recon_delay=-3.0e-6;% [0.527 -1.367 0]; % adjust this parameter to potentially improve resolution & geometric accuracy. It can be calibrated by inverting the spiral revolution dimension and making two images match. for our Prisma and a particular trajectory we found 1.75e-6
+traj_recon_delay=0.0e-6;% [0.527 -1.367 0]; % adjust this parameter to potentially improve resolution & geometric accuracy. It can be calibrated by inverting the spiral revolution dimension and making two images match. for our Prisma and a particular trajectory we found 1.75e-6
 grad_offsets=[0 0 0];
 
 seq = mr.Sequence();              % Create a new sequence object

@@ -30,12 +30,18 @@ basic_file_path=fullfile(p,n);
 data_file_path=[basic_file_path '.dat'];
 
 %% load and prepare raw data
+fprintf(['loading `' data_file_path '´ ...\n']);
 twix_obj = mapVBVD(data_file_path);
 
 if iscell(twix_obj)
     rawdata = double(twix_obj{end}.image.unsorted());
+    seqHash_twix=twix_obj{end}.hdr.Dicom.tSequenceVariant;
 else
     rawdata = double(twix_obj.image.unsorted());
+    seqHash_twix=twix_obj{end}.hdr.Dicom.tSequenceVariant;
+end
+if length(seqHash_twix)==32
+    fprintf(['raw data contain pulseq-file signature ' seqHash_twix '\n']);
 end
 
 %% if necessary re-tune the trajectory delay to supress ghosting

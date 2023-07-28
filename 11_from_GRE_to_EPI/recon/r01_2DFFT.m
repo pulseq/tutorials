@@ -39,10 +39,11 @@ else
     twix_obj = mapVBVD(data_file_path);
     if iscell(twix_obj)
         data_unsorted = twix_obj{end}.image.unsorted();
+        seqHash_twix=twix_obj{end}.hdr.Dicom.tSequenceVariant;
     else
         data_unsorted = twix_obj.image.unsorted();
+        seqHash_twix=twix_obj.hdr.Dicom.tSequenceVariant;    
     end
-    seqHash_twix=twix_obj.hdr.Dicom.tSequenceVariant;
     if length(seqHash_twix)==32
         fprintf(['raw data contain pulseq-file signature ' seqHash_twix '\n']);
     end
