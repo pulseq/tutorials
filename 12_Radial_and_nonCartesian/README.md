@@ -16,7 +16,7 @@ unchanged due to the 180° refocusing RF pulse.
 ***s02*** describes a 2D slice-selective radial sequence, built based on
 ***s01*** using the mr.rotate function. The mr.rotate function rotates
 the readout gradient and its pre-phaser around the *z*-axis to a certain
-angle, which projects the gradient into the *x*- and *y-*axis and thus
+angle, which projects the gradient into the *x*- and *y*-axis and thus
 produces two components.
 
 ***s03\_CartesianGradientEcho***
