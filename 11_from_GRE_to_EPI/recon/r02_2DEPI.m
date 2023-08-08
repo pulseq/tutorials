@@ -38,7 +38,7 @@ if iscell(twix_obj)
     seqHash_twix=twix_obj{end}.hdr.Dicom.tSequenceVariant;
 else
     rawdata = double(twix_obj.image.unsorted());
-    seqHash_twix=twix_obj{end}.hdr.Dicom.tSequenceVariant;
+    seqHash_twix=twix_obj.hdr.Dicom.tSequenceVariant;
 end
 if length(seqHash_twix)==32
     fprintf(['raw data contain pulseq-file signature ' seqHash_twix '\n']);
