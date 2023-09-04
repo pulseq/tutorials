@@ -89,7 +89,7 @@ recommend some useful books and websites listed below.
 
 **Books:**
 
--   Brown et al. Magnetic Resonance Imaging: Physical Principles and
+-   Brown et al., Magnetic Resonance Imaging: Physical Principles and
     Sequence Design, 2014.
     (<https://onlinelibrary.wiley.com/doi/book/10.1002/9781118633953>)
 
