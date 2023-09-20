@@ -66,7 +66,7 @@ Initial revision created on June 21 2023
 
 [2.1 Matlab and Pulseq Sequence Files](#21-matlab-and-pulseq-sequence-files)
 
-[2.2 Pulseq Interpreter](#22-pulseq-interpreter-for-siemens-Scanner)
+[2.2 Pulseq Interpreter](#22-pulseq-interpreter)
 
 [2.3 Blocks and Events in Pulseq](#23-blocks-and-events-in-pulseq)
 
@@ -175,7 +175,6 @@ the sequence folder on the MR scanner (folder defined by the
 NumarisX). These binary files of the Pulseq interpreter sequence are
 universal and can be used for any .seq file, so they only need to be copied
 to the scanner once.
-
 The .seq file that you want to execute needs to be
 placed in the subfolder `%CustomerSeq%\pulseq`. By default, the file
 named `external.seq` is used. Important: for the default protocol
@@ -187,6 +186,7 @@ store it in your favourite examination folder. Navigate to Dot Cockpit->Program 
 protocol and it will automatically read the Pulseq file `external.seq`
 in the folder `%CustomerSeq%\pulseq`. Refer to the Pulseq C2P documentation for
 further details.
+As for the Pulseq interpreter for GE scanners, Please go to <https://toppemri.github.io/> for more details.
 
 ## 2.3 Blocks and Events in Pulseq
 
