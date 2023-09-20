@@ -186,6 +186,7 @@ store it in your favourite examination folder. Navigate to Dot Cockpit->Program 
 protocol and it will automatically read the Pulseq file `external.seq`
 in the folder `%CustomerSeq%\pulseq`. Refer to the Pulseq C2P documentation for
 further details.
+
 As for the Pulseq interpreter for GE scanners, Please go to <https://toppemri.github.io/> for more details.
 
 ## 2.3 Blocks and Events in Pulseq
