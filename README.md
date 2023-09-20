@@ -66,7 +66,7 @@ Initial revision created on June 21 2023
 
 [2.1 Matlab and Pulseq Sequence Files](#21-matlab-and-pulseq-sequence-files)
 
-[2.2 Pulseq Interpreter for Siemens scanner](#22-pulseq-interpreter-for-siemens-Scanner)
+[2.2 Pulseq Interpreter](#22-pulseq-interpreter-for-siemens-Scanner)
 
 [2.3 Blocks and Events in Pulseq](#23-blocks-and-events-in-pulseq)
 
