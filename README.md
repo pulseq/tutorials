@@ -120,7 +120,7 @@ adding its directory and subdirectories to Matlab's path.
 
 The mapVBVD software is required to read raw data in Siemens TWIX
 format. The software can be downloaded from\
-<https://github.com/CIC-methods/FID-A/tree/master/inputOutput/mapVBVD>\
+<[https://github.com/CIC-methods/FID-A/tree/master/inputOutput/mapVBVD](https://github.com/pehses/mapVBVD)>\
 and installed by adding its directory to Matlab's path.
 
 ## 1.5 Text Compare Tool
