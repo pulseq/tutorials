@@ -34,7 +34,7 @@ gzComb=mr.addGradients({gz, gzReph}, 'system', sys);
 deltak=1/fov;
 gx = mr.makeTrapezoid('x','Amplitude',Nx*deltak/ro_dur,'FlatTime',ceil(ro_dur/sys.gradRasterTime)*sys.gradRasterTime,'system',sys);
 adc = mr.makeAdc(Nx*ro_os,'Duration',ro_dur,'Delay',gx.riseTime,'system',sys);
-gxPre = mr.makeTrapezoid('x','Area',-gx.amplitude*(ro_dur/Nx/ro_os*(Nx*ro_os/2-0.5)+0.5*gx.riseTime),'system',sys); % 0.5 is necessary to acount for the Siemens sampling in the center of the dwell periods
+gxPre = mr.makeTrapezoid('x','Area',-gx.amplitude*(ro_dur/Nx/ro_os*(Nx*ro_os/2-0.5)+0.5*gx.riseTime),'system',sys); % 0.5 is necessary to account for the Siemens sampling in the center of the dwell periods
 % start gxPre at least right after the RF pulse and when possible end it at the same time as the end of the slice refocusing gradient 
 [gxPre,~,~]=mr.align('right', gxPre, 'right', gzComb, 'left', mr.makeDelay(mr.calcDuration(rf)+mr.calcDuration(gxPre)));
 

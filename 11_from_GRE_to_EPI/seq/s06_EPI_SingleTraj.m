@@ -34,7 +34,7 @@ kWidth = Nx*deltak;
 blip_dur = ceil(2*sqrt(deltak/sys.maxSlew)/sys.gradRasterTime/2)*sys.gradRasterTime*2; % we round-up the duration to 2x the gradient raster time
 gyBlip = mr.makeTrapezoid('y',sys,'Area',-deltak,'Duration',blip_dur); % we use negative blips to save one k-space line on our way towards the k-space center
 
-% readout gradient is a truncated trapezoid with dead times at the beginnig
+% readout gradient is a truncated trapezoid with dead times at the beginning
 % and at the end, each equal to a half of blip_dur
 % the area between the blips should be equal to kWidth
 % we do a two-step calculation: we first increase the area assuming maximum

@@ -44,8 +44,8 @@ if length(seqHash_twix)==32
     fprintf(['raw data contain pulseq-file signature ' seqHash_twix '\n']);
 end
 
-%% if necessary re-tune the trajectory delay to supress ghosting
-traj_recon_delay=0.0e-6;%3.23e-6;%-1e-6;%3.90e-6;%-1.03e-6; % adjust this parameter to supress ghosting (negative allowed) (our trio -1.0e-6, prisma +3.9e-6; avanto +3.88)
+%% if necessary re-tune the trajectory delay to suppress ghosting
+traj_recon_delay=0.0e-6;%3.23e-6;%-1e-6;%3.90e-6;%-1.03e-6; % adjust this parameter to suppress ghosting (negative allowed) (our trio -1.0e-6, prisma +3.9e-6; avanto +3.88)
 [ktraj_adc, t_adc, ktraj, t_ktraj, t_excitation, t_refocusing] = seq.calculateKspacePP('trajectory_delay', traj_recon_delay);
 %[ktraj_adc, ktraj, t_excitation, t_refocusing, t_adc] = seq.calculateKspace('trajectory_delay', traj_recon_delay);
 %ktraj_adc_nodelay=seq.calculateKspace('trajectory_delay', 10e-6);

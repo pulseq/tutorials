@@ -6,7 +6,7 @@ adcDur=2.56e-3;
 rfDur1=3e-3;
 rfDur2=1e-3;
 TR=150e-3;
-TE=54e-3; % 20ms still works with the chosen parameters & sysyem props
+TE=54e-3; % 20ms still works with the chosen parameters & system props
 spA=1000; % spoiler area in 1/m (=Hz/m*s) % MZ: need 5000 for my oil phantom
 
 sliceThickness=3e-3;            % slice
