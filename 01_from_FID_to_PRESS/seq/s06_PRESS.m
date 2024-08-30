@@ -5,13 +5,13 @@ system = mr.opts('MaxGrad', 15, 'GradUnit', 'mT/m', ...
 
 seq=mr.Sequence(system);              % Create a new sequence object
 voxel=[20 30 40]*1e-3; % voxel size
-Nx=4096;
+Nx=8192;
 Nrep=1;
 Ndummy=0;
-adcDur=256e-3; 
+adcDur=1024e-3; 
 rfDurEx=3000e-6;
-rfDurRef=4000e-6;
-TR=400e-3;
+rfDurRef=4800e-6;
+TR=1100e-3;
 TE=120e-3;
 spA=0.6e3; % spoiler area in 1/m (=Hz/m*s)
 spB=2.0e3; % spoiler area in 1/m (=Hz/m*s)
@@ -19,9 +19,9 @@ spB=2.0e3; % spoiler area in 1/m (=Hz/m*s)
 %% Create slice-selective excitation and refocusing pulses
 [rf_ex, g_ex, g_exReph] = mr.makeSincPulse(pi/2,'Duration',rfDurEx,...
     'SliceThickness',voxel(1),'apodization',0.5,'timeBwProduct',8,'system',system);
-[rf_ref1, g_ref1] = mr.makeSincPulse(pi,'Duration',rfDurEx,'PhaseOffset',pi/2,...
+[rf_ref1, g_ref1] = mr.makeSincPulse(pi,'Duration',rfDurRef,'PhaseOffset',pi/2,...
     'SliceThickness',voxel(2),'apodization',0.6,'timeBwProduct',8,'system',system,'use','refocusing');
-[rf_ref2, g_ref2] = mr.makeSincPulse(pi,'Duration',rfDurEx,'PhaseOffset',pi/2,...
+[rf_ref2, g_ref2] = mr.makeSincPulse(pi,'Duration',rfDurRef,'PhaseOffset',pi/2,...
     'SliceThickness',voxel(3),'apodization',0.6,'timeBwProduct',8,'system',system,'use','refocusing');
 % fix channels for the gradients
 g_ex.channel='x';
@@ -98,7 +98,8 @@ for i=(1-Ndummy):Nrep
     seq.addBlock(mr.makeDelay(delayTR));
 end
 
-seq.plot('showBlocks',true,'timeDisp','us');
+%%
+seq.plot('showBlocks',true,'timeDisp','us','stacked',true);
 
 % check whether the timing of the sequence is compatible with the scanner
 [ok, error_report]=seq.checkTiming;
@@ -119,3 +120,7 @@ seq.write('press.seq')       % Write to pulseq file
 [ktraj_adc, t_adc, ktraj, t_ktraj, t_excitation, t_refocusing] = seq.calculateKspacePP('gradient_offset',[0 0 1000]);
 
 figure; plot(t_ktraj,ktraj);title('k-space components as functions of time'); grid on;
+
+%% demo paperPlot 
+
+seq.paperPlot();
