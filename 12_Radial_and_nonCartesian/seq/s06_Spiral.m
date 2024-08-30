@@ -9,7 +9,9 @@ phi=pi/2;                  % orientation of the readout e.g. for interleaving
 % Set system limits
 sys = mr.opts('MaxGrad',22,'GradUnit','mT/m',...
     'MaxSlew',160,'SlewUnit','T/m/s',...
-    'rfRingdownTime', 30e-6, 'rfDeadtime', 100e-6, 'adcDeadTime', 10e-6);  
+    'rfRingdownTime', 30e-6, 'rfDeadtime', 100e-6, 'adcDeadTime', 10e-6,...
+    'adcSamplesLimit', 8192);  % adcSamplesLimit is important on many Siemens platforms
+
 seq=mr.Sequence(sys);      % Create a new sequence object
 warning('OFF', 'mr:restoreShape'); % restore shape is not compatible with spirals and will throw a warning from each plot() or calcKspace() call
 
@@ -76,20 +78,15 @@ gzReph = mr.makeTrapezoid('z',sys,'Area',-gz.area/2);
 % round-down dwell time to 10 ns
 adcTime = sys.gradRasterTime*size(spiral_grad_shape,2);
 % actually it is trickier than that: the (Siemens) interpreter sequence 
-% per default will try to split the trajectory into segments <=1000 samples
+% per default will try to split the trajectory into segments with the number of samples <8192
 % and every of these segments will have to have duration aligned to the
 % gradient raster time
-adcSamplesPerSegment=500; % you may need to play with this number to fill the entire trajectory
-adcSamplesDesired=kRadius*kSamples;
-adcSegments=round(adcSamplesDesired/adcSamplesPerSegment);
-adcSamples=adcSegments*adcSamplesPerSegment;
-adcDwell=round(adcTime/adcSamples/100e-9)*100e-9; % on Siemens adcDwell needs to be aligned to 100ns (if my memory serves me right)
-adcSegmentDuration=adcSamplesPerSegment*adcDwell; % with the 100 samples above and the 100ns alignment we automatically fullfill the segment alignment requirement
-if mod(adcSegmentDuration, sys.gradRasterTime)>eps 
-    error('ADC segmentation model results in incorrect segment duration');
-end
-% update segment count
-adcSegments=floor(adcTime/adcSegmentDuration);
+
+adcSamplesDesired=kRadius*kSamples; 
+adcDwell=round(adcTime/adcSamplesDesired/sys.adcRasterTime)*sys.adcRasterTime; 
+adcSamplesDesired=ceil(adcTime/adcDwell);
+[adcSegments,adcSamplesPerSegment]=mr.calcAdcSeg(adcSamplesDesired,adcDwell,sys); 
+
 adcSamples=adcSegments*adcSamplesPerSegment;
 adc = mr.makeAdc(adcSamples,'Dwell',adcDwell,'Delay',mr.calcDuration(gzReph));%lims.adcDeadTime);
 
