@@ -2,16 +2,16 @@ system = mr.opts('rfRingdownTime', 20e-6, 'rfDeadTime', 100e-6, ...
                  'adcDeadTime', 20e-6);
 
 seq=mr.Sequence(system);              % Create a new sequence object
-Nx=8192;
+Nx=128;
 Nrep=1;
-adcDur=102.4e-3; 
+adcDur=6.4e-3; 
 rfDur=1000e-6;
-TR=250e-3;
-TE=110e-3;
+TR=13e-3;
+TE=10e-3;
 % todo: change ADC duration
 
 % Create non-selective excitation and refocusing pulses
-rf_ex = mr.makeBlockPulse(pi/2,'Duration',rfDur, 'system', system); % for this phantom and this coil I had to reduce flip angle to avoid receiver saturation
+rf_ex = mr.makeBlockPulse(pi/2,'Duration',rfDur, 'system', system, 'use', 'excitation'); % for this phantom and this coil I had to reduce flip angle to avoid receiver saturation
 rf_ref = mr.makeBlockPulse(pi,'Duration',rfDur, 'system', system, 'use', 'refocusing'); % needed for the proper k-space calculation
     
 % Define delays and ADC events
@@ -19,7 +19,8 @@ rf_ref = mr.makeBlockPulse(pi,'Duration',rfDur, 'system', system, 'use', 'refocu
 delayTE1 = TE/2 - rf_ex.shape_dur/2 - rf_ex.ringdownTime - rf_ref.delay - rf_ref.shape_dur/2 ;
 % delayTE2=TE/2-mr.calcDuration(rf_ref)+rf_ref.delay+mr.calcRfCenter(rf_ref)-adcDur/2; % this is not perfect, but -adcDur/2/Nx  will break the raster alignment
 delayTE2 = TE/2 - rf_ref.shape_dur/2 - rf_ref.ringdownTime - adcDur / 2 ;
-adc = mr.makeAdc(Nx,'Duration',adcDur, 'system', system, 'delay', delayTE2);
+%adc = mr.makeAdc(Nx,'Duration',adcDur, 'system', system, 'delay', delayTE2);
+adc = mr.makeAdc(Nx,'Duration',adcDur, 'system', system);
 
 delayTR=TR-mr.calcDuration(rf_ex)-delayTE1-mr.calcDuration(rf_ref);
 
@@ -30,8 +31,9 @@ assert(delayTR>=0);
 % Loop over repetitions and define sequence blocks
 for i=1:Nrep
     seq.addBlock(rf_ex);
-    seq.addBlock(mr.makeDelay(delayTE1)); 
+    seq.addBlock(delayTE1); 
     seq.addBlock(rf_ref);
+    seq.addBlock(delayTE2-adc.delay); 
     seq.addBlock(adc,mr.makeDelay(delayTR));  
 end
 

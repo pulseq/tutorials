@@ -12,7 +12,7 @@ spA=1000; % spoiler area in 1/m (=Hz/m*s)
 % todo: change spoiler area, remove one of spoilers and observe the signal
 
 % Create non-selective excitation and refocusing pulses
-rf_ex = mr.makeBlockPulse(pi/2,'Duration',rfDur, 'system', system); % for this phantom and this coil I had to reduce flip angle to avoid receiver saturation
+rf_ex = mr.makeBlockPulse(pi/2,'Duration',rfDur, 'system', system, 'use', 'excitation'); % for this phantom and this coil I had to reduce flip angle to avoid receiver saturation
 rf_ref = mr.makeBlockPulse(pi,'Duration',rfDur, 'system', system, 'use', 'refocusing'); % needed for the proper k-space calculation
     
 % calculate spoiler gradient

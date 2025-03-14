@@ -21,7 +21,7 @@ roDuration=640e-6;              % not all values are possible, watch out for the
 
 % Create alpha-degree slice selection pulse and corresponding gradients 
 [rf, gz, gzReph] = mr.makeSincPulse(alpha*pi/180,'Duration',rfDuration,...
-    'SliceThickness',sliceThickness,'apodization',0.42,'timeBwProduct',4,'system',sys);
+    'SliceThickness',sliceThickness,'apodization',0.42,'timeBwProduct',4,'use','excitation','system',sys);
 
 % define the output trigger to play out with every slice excitation
 trig=mr.makeDigitalOutputPulse('ext1','duration', 100e-6,'delay', rf.delay+mr.calcRfCenter(rf)-160e-6); % possible channels: 'osc0','osc1','ext1'
@@ -102,8 +102,8 @@ wave_length=seq_d.duration/sys.gradRasterTime;
 wave_time=((1:wave_length)-0.5)*sys.gradRasterTime;
 wave_x=interp1(wave_data{1}(1,:),wave_data{1}(2,:),wave_time,'linear',0); % the last value of 0 is important to extrapolate with 0s
 wave_y=interp1(wave_data{2}(1,:),wave_data{2}(2,:),wave_time,'linear',0);
-gx_traj=mr.makeArbitraryGrad('x',wave_x);
-gy_traj=mr.makeArbitraryGrad('y',wave_y);
+gx_traj=mr.makeArbitraryGrad('x',wave_x,'first',0,'last',0);
+gy_traj=mr.makeArbitraryGrad('y',wave_y,'first',0,'last',0);
 
 % make new ADC
 adcDur=seq_d.duration-2*sys.adcDeadTime; % dead times at the beginning and at the end 
@@ -152,7 +152,7 @@ title('full k-space trajectory (k_x x k_y)');
 
 %% PNS calc
 
-[pns_ok, pns_n, pns_c, tpns]=seq_r.calcPNS('idea/asc/MP_GPA_K2309_2250V_951A_AS82.asc'); % prisma
+[pns_ok, pns_n, pns_c, tpns]=seq_r.calcPNS('~/range_software/pulseq/matlab/idea/asc/MP_GPA_K2309_2250V_951A_AS82.asc'); % prisma
 %[pns_ok, pns_n, pns_c, tpns]=seq_r.calcPNS('idea/asc/MP_GPA_K2309_2250V_951A_GC98SQ.asc'); % aera-xq
 %[pns_ok, pns_n, pns_c, tpns]=seq_r.calcPNS('idea/asc/MP_GPA_K2298_2250V_793A_SC72CD_EGA.asc'); % TERRA-XR
 

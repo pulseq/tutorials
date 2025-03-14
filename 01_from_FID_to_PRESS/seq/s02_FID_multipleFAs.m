@@ -12,7 +12,7 @@ flip_angles=9;
 % todo: change flip_angles to 18 and pi/2 to pi below
 
 % Create non-selective pulse 
-rf = mr.makeBlockPulse(pi/2,'Duration',rfDur, 'system', system);
+rf = mr.makeBlockPulse(pi/2,'Duration',rfDur, 'system', system, 'use', 'excitation');
     
 % Define delays and ADC events
 adc = mr.makeAdc(Nx,'Duration',adcDur, 'system', system, 'delay', TE-rf.shape_dur/2-system.rfRingdownTime);
@@ -21,7 +21,7 @@ delayTR=TR-mr.calcDuration(rf);
 assert(delayTR>=0);
 
 for f=1:flip_angles
-    rf = mr.makeBlockPulse(pi/flip_angles*f,'Duration',rfDur, 'system', system);
+    rf = mr.makeBlockPulse(pi/flip_angles*f,'Duration',rfDur, 'system', system, 'use', 'excitation');
     % Loop over repetitions and define sequence blocks
     for i=1:Nrep
         seq.addBlock(rf);

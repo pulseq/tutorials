@@ -12,7 +12,7 @@ bg=5000; % Hz/m
 %todo: vary gradient
 
 % Create non-selective excitation and refocusing pulses 
-rf_ex = mr.makeBlockPulse(pi/2,'Duration',rfDur, 'system', system);
+rf_ex = mr.makeBlockPulse(pi/2,'Duration',rfDur, 'system', system, 'use', 'excitation');
 rf_ref = mr.makeBlockPulse(pi,'Duration',rfDur, 'system', system, 'use', 'refocusing'); % needed for the proper k-space calculation
     
 % Define delays and ADC events

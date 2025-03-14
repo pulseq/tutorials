@@ -1,5 +1,5 @@
 system = mr.opts('rfRingdownTime', 20e-6, 'rfDeadTime', 100e-6, ...
-                 'adcDeadTime', 20e-6);
+                 'adcDeadTime', 20e-6, 'use', 'excitation');
 
 seq=mr.Sequence(system);              % Create a new sequence object
 Nx=8192;

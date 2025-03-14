@@ -21,7 +21,7 @@ roDuration=640e-6;              % not all values are possible, watch out for the
 
 % Create alpha-degree slice selection pulse and corresponding gradients 
 [rf, gz, gzReph] = mr.makeSincPulse(alpha*pi/180,'Duration',rfDuration,...
-    'SliceThickness',sliceThickness,'apodization',0.42,'timeBwProduct',4,'system',sys);
+    'SliceThickness',sliceThickness,'apodization',0.42,'timeBwProduct',4,'use','excitation','system',sys);
 
 % define the output trigger to play out with every slice excitation
 trig=mr.makeDigitalOutputPulse('ext1','duration', 100e-6,'delay', rf.delay+mr.calcRfCenter(rf)); % possible channels: 'osc0','osc1','ext1'
@@ -84,7 +84,7 @@ gzSpoil=mr.makeTrapezoid('z','Area',4/sliceThickness,'system',sys); % 4 cycles o
 % skip timing (TE/TR calculation), we'll accept the shortest TE/TR
 
 % define sequence blocks
-seq.addBlock(gz,trig);
+seq.addBlock(rf,gz,trig);
 seq.addBlock(mr.align('left',gyPre,gzReph,'right',gxPre));
 for i=1:Ny % loop over phase encodes
     if i==1
@@ -129,9 +129,12 @@ axis('equal'); % enforce aspect ratio for the correct trajectory display
 hold;plot(ktraj_adc(1,:),ktraj_adc(2,:),'r.'); % plot the sampling points
 title('full k-space trajectory (k_x x k_y)');
 
+% nice plot for a paper (looks nicer if you reduce the number of phase encoding steps)
+seq.paperPlot();
+
 %% PNS calc
 
-[pns_ok, pns_n, pns_c, tpns]=seq.calcPNS('idea/asc/MP_GPA_K2309_2250V_951A_AS82.asc'); % prisma
+[pns_ok, pns_n, pns_c, tpns]=seq.calcPNS('~/range_software/pulseq/matlab/idea/asc/MP_GPA_K2309_2250V_951A_AS82.asc'); % prisma
 %[pns_ok, pns_n, pns_c, tpns]=seq.calcPNS('idea/asc/MP_GPA_K2309_2250V_951A_GC98SQ.asc'); % aera-xq
 %[pns_ok, pns_n, pns_c, tpns]=seq.calcPNS('idea/asc/MP_GPA_K2298_2250V_793A_SC72CD_EGA.asc'); % TERRA-XR
 

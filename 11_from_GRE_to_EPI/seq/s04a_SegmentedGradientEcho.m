@@ -20,7 +20,7 @@ roDuration=640e-6;             % not all values are possible, watch out for the 
 
 % Create alpha-degree slice selection pulse and corresponding gradients 
 [rf, gz, gzReph] = mr.makeSincPulse(alpha*pi/180,'Duration',rfDuration,...
-    'SliceThickness',sliceThickness,'apodization',0.42,'timeBwProduct',4,'system',sys);
+    'SliceThickness',sliceThickness,'apodization',0.42,'timeBwProduct',4,'use','excitation','system',sys);
 
 % Define other gradients and ADC events
 deltak=1/fov; % Pulseq default units for k-space are inverse meters
