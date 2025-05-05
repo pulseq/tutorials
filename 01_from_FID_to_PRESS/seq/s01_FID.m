@@ -1,5 +1,5 @@
 system = mr.opts('rfRingdownTime', 20e-6, 'rfDeadTime', 100e-6, ...
-                 'adcDeadTime', 20e-6, 'use', 'excitation');
+                 'adcDeadTime', 20e-6);
 
 seq=mr.Sequence(system);              % Create a new sequence object
 Nx=8192;
@@ -12,7 +12,7 @@ TE=30e-3; % the used coil has a very long switching time!
 % todo2: change repetitions to increase SNR
 
 % Create non-selective pulse 
-rf = mr.makeBlockPulse(pi/2,'Duration',rfDur, 'system', system);
+rf = mr.makeBlockPulse(pi/2,'Duration',rfDur, 'system', system, 'use', 'excitation');
     
 % Define delays and ADC events
 adc = mr.makeAdc(Nx,'Duration',adcDur, 'system', system, 'delay', TE-rf.shape_dur/2-system.rfRingdownTime);
