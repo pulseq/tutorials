@@ -20,7 +20,7 @@ starting_angle=0;               % the orientation of the first projection
 % refocusing gradient; we will not use it however but will subtract its
 % area from the first spoiler
 [rf_ex, gs, gsr] = mr.makeSincPulse(pi/2,system,'Duration',3e-3,...
-    'SliceThickness',sliceThickness,'apodization',0.4,'timeBwProduct',4);
+    'SliceThickness',sliceThickness,'apodization',0.4,'timeBwProduct',4,'use','excitation');
 
 % Create non-selective refocusing pulse
 rf_ref = mr.makeBlockPulse(pi,'Duration',rfDur2, 'system', system, 'PhaseOffset' ,pi/2 , 'use', 'refocusing'); % needed for the proper k-space calculation

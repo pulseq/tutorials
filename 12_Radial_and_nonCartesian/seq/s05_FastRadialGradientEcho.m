@@ -26,7 +26,7 @@ rfSpoilingInc=117;              % RF spoiling increment
 
 % Create alpha-degree slice selection pulse and gradient
 [rf, gz, gzReph] = mr.makeSincPulse(alpha*pi/180,'Duration',rf_dur,...
-    'SliceThickness',sliceThickness,'apodization',0.5,'timeBwProduct',2,'system',sys);
+    'SliceThickness',sliceThickness,'apodization',0.5,'timeBwProduct',2,'use','excitation','system',sys);
 gzReph.delay=mr.calcDuration(gz);
 gzComb=mr.addGradients({gz, gzReph}, 'system', sys);
 
