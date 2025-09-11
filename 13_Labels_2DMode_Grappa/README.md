@@ -2,11 +2,11 @@
 
 Welcome to the "Labels, 2D Mode, ICE integration and GRAPPA" tutorial repository! 
 
-plan: 3D mode; 2D mode; Simple labels; ...
-
 This tutorial presents steps that are necessary for converting a 2D GRE sequence, 
 which runs but produces unstructured raw data, into a sequence that integrates 
-with the scanner's UI and theimage reconstruction environment (ICE).
+with the scanner's UI and theimage reconstruction environment (ICE). We then integrate 
+GRAPPA sampling pattern with embedded auto-calibration lines and mark the data to the 
+ICE environment to accept them and produce images.
 
 ***s01\_GRE***
 
