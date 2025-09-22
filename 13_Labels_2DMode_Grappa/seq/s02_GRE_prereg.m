@@ -123,9 +123,9 @@ end
 
 %% prepare sequence export
 seq.setDefinition('FOV', [fov fov (max(slicePositions)-min(slicePositions)+sliceThickness)]) ;
-seq.setDefinition('Name', 'gre') ;
+seq.setDefinition('Name', 'gre_s02') ;
 
-seq.write('gre.seq')       % Write to pulseq file
+seq.write('gre_s02.seq')       % Write to pulseq file
 
 %% plot sequence and k-space diagrams
 seq.plot('timeRange', [0 5]*TR) ;

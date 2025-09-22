@@ -112,12 +112,13 @@ end
 
 %% prepare sequence export
 seq.setDefinition('FOV', [fov fov (max(slicePositions)-min(slicePositions)+sliceThickness)]) ;
-seq.setDefinition('Name', 'gre') ;
+seq.setDefinition('Name', 'gre_s01') ;
 
-seq.write('gre.seq')       % Write to pulseq file
+seq.write('gre_s01.seq')       % Write to pulseq file
 
 %% plot sequence and k-space diagrams
-seq.plot('timeRange', [0 5]*TR) ;
+seq.plot('showBlocks', 1, 'timeDisp','us', 'stacked', 1); 
+% seq.plot('timeRange', [0 5]*TR) ;
 
 % k-space trajectory calculation
 [ktraj_adc, t_adc, ktraj, t_ktraj, t_excitation, t_refocusing] = seq.calculateKspacePP();

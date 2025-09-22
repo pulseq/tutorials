@@ -140,14 +140,14 @@ end
 
 %% prepare sequence export
 seq.setDefinition('FOV', [fov fov sliceThickness]) ;
-seq.setDefinition('Name', 'gre_p2') ;
+seq.setDefinition('Name', 'gre_s04') ;
 
 % switch the 2D mode
 seq.setDefinition('SlicePositions', slicePositions) ; 
 seq.setDefinition('SliceThickness', sliceThickness) ;
 seq.setDefinition('SliceGap', sliceGap) ;
 
-seq.write('gre.seq')       % Write to pulseq file
+seq.write('gre_s04.seq')       % Write to pulseq file
 
 %% evaluate label settings more specifically
 adc_lbl = seq.evalLabels('evolution','adc') ;

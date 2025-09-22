@@ -183,7 +183,7 @@ end
 
 %% prepare sequence export
 seq.setDefinition('FOV', [fov fov sliceThickness]) ;
-seq.setDefinition('Name', 'gre_p2') ;
+seq.setDefinition('Name', 'gre_s06') ;
 
 % switch the 2D mode
 seq.setDefinition('SlicePositions', slicePositions) ; 
@@ -195,7 +195,7 @@ seq.setDefinition('kSpaceCenterLine', centerLineIdx-1) ;
 phaseResoluion = fov/Nx / (fov/Ny) ;
 seq.setDefinition('PhaseResolution', phaseResoluion) ;
 
-seq.write('gre_p2.seq')       % Write to pulseq file
+seq.write('gre_s06.seq')       % Write to pulseq file
 
 %% evaluate label settings more specifically
 adc_lbl = seq.evalLabels('evolution','adc') ;
