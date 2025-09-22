@@ -139,7 +139,8 @@ else
 end
 
 %% prepare sequence export
-seq.setDefinition('FOV', [fov fov sliceThickness]) ;
+
+seq.setDefinition('FOV', [fov fov (max(slicePositions)-min(slicePositions)+sliceThickness)]) ;
 seq.setDefinition('Name', 'gre_s04') ;
 
 % switch the 2D mode
